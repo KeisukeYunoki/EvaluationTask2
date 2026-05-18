@@ -14,7 +14,11 @@ class InputCheck {
 
 	protected boolean isNumeric()
 	{
-		if (this.str == "") {
+		/*
+		*不具合：文字列の比較に==を使っていた。
+		*修正:isEmptyを使って正しい文字列比較にした。
+		*/
+		if (this.str.isEmpty()) {
 			return false;
 		}
 		for (int i = 0; i < this.str.length(); i++)
