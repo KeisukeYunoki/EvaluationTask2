@@ -8,7 +8,11 @@ class CreateFile {
 
 	protected static boolean createDummyFile(int byteSize)
 	{
-		File file = new File("./DummyFile");
+		/*
+		*不具合:フォルダ名と同じため、動かなかった。
+		*修正:動くようパス名を変更した。
+		*/
+		File file = new File("./dummy.bin");
 		file.delete();
 		try(RandomAccessFile rFile = new RandomAccessFile(file.getPath(), "rw")){
 			rFile.setLength(byteSize);
